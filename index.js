@@ -6,6 +6,9 @@ function createGrid(num) {
     line.classList.add("line");
     for (let k = 0; k < num; k++) {
       const square = document.createElement("div");
+      square.addEventListener("mouseover", (event) => {
+        square.classList.add("hover");
+      });
 
       square.classList.add("square");
       line.appendChild(square);
@@ -14,6 +17,6 @@ function createGrid(num) {
   }
 }
 
-createGrid(58);
+createGrid(45);
 
 // do it by creating a whole div with row of smaller divs

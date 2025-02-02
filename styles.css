@@ -14,7 +14,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: aliceblue;
-
   width: 960px;
   height: 960px;
   padding: 8px;
@@ -32,4 +31,8 @@ body {
   display: inline-flex;
   justify-content: center;
   flex: auto;
+}
+
+.hover {
+  background-color: red;
 }
