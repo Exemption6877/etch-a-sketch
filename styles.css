@@ -54,7 +54,7 @@ button {
 .line {
   display: inline-flex;
   justify-content: center;
-  flex: auto;
+  flex: 1;
 }
 
 .hover {
