@@ -2,7 +2,9 @@ const grid = document.querySelector(".grid");
 const size = document.querySelector("#size");
 const reset = document.querySelector("#reset");
 
-function createGrid(num = 16) {
+let currentGridSize = 16;
+
+function createGrid(num) {
   for (let i = 0; i < num; i++) {
     const line = document.createElement("div");
     line.classList.add("line");
@@ -19,6 +21,8 @@ function createGrid(num = 16) {
   }
 }
 
+createGrid(currentGridSize);
+
 function removeGrid() {
   const squares = document.querySelectorAll(".square");
   const lines = document.querySelectorAll(".line");
@@ -32,29 +36,30 @@ function removeGrid() {
   });
 }
 
-createGrid();
-
 reset.addEventListener("click", (event) => {
   removeGrid();
-  createGrid();
+  createGrid(currentGridSize);
 });
 
 size.addEventListener("click", () => {
-  let response = parseInt(prompt("Enter your size under 100: "));
-
-  if (response > 100) {
-    response = parseInt(
-      prompt("The number is too big, please enter the number below 100: ")
-    );
-  } else if (response < 1) {
-    response = parseInt(
-      prompt("The number is too low, please enter the bigger than 0: ")
-    );
-  } else {
-    removeGrid();
-    createGrid();
-  }
-
   removeGrid();
-  createGrid(response);
+  createGrid(getResponse());
 });
+
+function getResponse() {
+  let response = parseInt(prompt("Enter your grid size under 100: "));
+
+  if (!Number.isInteger(response)) {
+    alert("Type error, please provide a number below 100: ");
+    return getResponse();
+  } else if (response > 100) {
+    alert("The number is too big, please enter the number below 100: ");
+    return getResponse();
+  } else if (response < 1) {
+    alert("The number is too low, please enter the bigger than 0: ");
+    return getResponse();
+  } else {
+    currentGridSize = response;
+    return currentGridSize;
+  }
+}
