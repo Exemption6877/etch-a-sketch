@@ -4,6 +4,18 @@ const reset = document.querySelector("#reset");
 
 let currentGridSize = 16;
 
+createGrid(currentGridSize);
+
+reset.addEventListener("click", (event) => {
+  removeGrid();
+  createGrid(currentGridSize);
+});
+
+size.addEventListener("click", () => {
+  removeGrid();
+  createGrid(getResponse());
+});
+
 function createGrid(num) {
   for (let i = 0; i < num; i++) {
     const line = document.createElement("div");
@@ -21,8 +33,6 @@ function createGrid(num) {
   }
 }
 
-createGrid(currentGridSize);
-
 function removeGrid() {
   const squares = document.querySelectorAll(".square");
   const lines = document.querySelectorAll(".line");
@@ -35,16 +45,6 @@ function removeGrid() {
     element.remove();
   });
 }
-
-reset.addEventListener("click", (event) => {
-  removeGrid();
-  createGrid(currentGridSize);
-});
-
-size.addEventListener("click", () => {
-  removeGrid();
-  createGrid(getResponse());
-});
 
 function getResponse() {
   let response = parseInt(prompt("Enter your grid size under 100: "));
