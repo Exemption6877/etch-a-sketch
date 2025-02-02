@@ -1,3 +1,7 @@
+* {
+  font-family: Roboto, "Times New Roman";
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -7,21 +11,41 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: beige;
+  background-color: #5b913b;
+}
+
+h1 {
+  color: #ffff;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+}
+
+.buttons {
+  gap: 16px;
+  padding-bottom: 32px;
+}
+
+button {
+  background-color: #ffe8b6;
+  width: 80px;
+  height: auto;
 }
 
 .grid {
-  display: flex;
   flex-direction: column;
-  background-color: aliceblue;
+  background-color: #77b254;
   width: 960px;
   height: 960px;
   padding: 8px;
 }
 
 .square {
-  background-color: black;
-  border: 1px solid white;
+  background-color: white;
+  border: 1px solid black;
   flex: auto;
   max-width: 100%;
   height: auto;
