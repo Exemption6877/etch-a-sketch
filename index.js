@@ -1,4 +1,6 @@
 const grid = document.querySelector(".grid");
+const size = document.querySelector("#size");
+const reset = document.querySelector("#reset");
 
 function createGrid(num = 16) {
   for (let i = 0; i < num; i++) {
@@ -32,14 +34,10 @@ function removeGrid() {
 
 createGrid();
 
-const reset = document.querySelector("#reset");
-
 reset.addEventListener("click", (event) => {
   removeGrid();
   createGrid();
 });
-
-const size = document.querySelector("#size");
 
 size.addEventListener("click", () => {
   let response = parseInt(prompt("Enter your size under 100: "));
