@@ -1,6 +1,6 @@
 const grid = document.querySelector(".grid");
 
-function createGrid(num) {
+function createGrid(num = 16) {
   for (let i = 0; i < num; i++) {
     const line = document.createElement("div");
     line.classList.add("line");
@@ -30,7 +30,7 @@ function removeGrid() {
   });
 }
 
-createGrid(16);
+createGrid();
 
 const reset = document.querySelector("#reset");
 
@@ -53,6 +53,9 @@ size.addEventListener("click", () => {
     response = parseInt(
       prompt("The number is too low, please enter the bigger than 0: ")
     );
+  } else {
+    removeGrid();
+    createGrid();
   }
 
   removeGrid();

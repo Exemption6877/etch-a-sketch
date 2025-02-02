@@ -45,7 +45,6 @@ button {
 
 .square {
   background-color: white;
-  border: 1px solid black;
   flex: auto;
   max-width: 100%;
   height: auto;
