@@ -14,6 +14,6 @@ function createGrid(num) {
   }
 }
 
-createGrid(16);
+createGrid(58);
 
 // do it by creating a whole div with row of smaller divs

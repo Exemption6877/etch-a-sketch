@@ -23,7 +23,7 @@ body {
 .square {
   background-color: black;
   border: 1px solid white;
-  flex: 1;
+  flex: auto;
   max-width: 100%;
   height: auto;
 }
@@ -31,6 +31,5 @@ body {
 .line {
   display: inline-flex;
   justify-content: center;
-  width: 960px;
-  height: 960px;
+  flex: auto;
 }
