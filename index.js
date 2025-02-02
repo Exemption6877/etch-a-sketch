@@ -17,6 +17,13 @@ function createGrid(num) {
   }
 }
 
-createGrid(45);
+createGrid(64);
 
-// do it by creating a whole div with row of smaller divs
+const reset = document.querySelector("#reset");
+
+reset.addEventListener("click", (event) => {
+  document.querySelectorAll(".square").forEach((element) => {
+    element.classList.remove("hover");
+  });
+});
+
